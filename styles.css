@@ -1,0 +1,215 @@
+:root {
+  /* Colors  */
+  /* ### Primary  */
+  --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);  
+  /* Neutral  */
+  --Light-Grayish-Cyan /*(Background)*/: hsl(180, 52%, 96%);
+  --Light-Grayish-Cyan /*(Filter Tablets)*/: hsl(180, 31%, 95%);
+  --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+  --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 62.5%;
+}
+
+.main {
+  background-color: var(--Light-Grayish-Cyan);
+  position: relative;
+  display: grid;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  grid-template-rows: 156px 1fr auto;
+  grid-template-columns: 5% 1fr 5%;
+  margin: 0 auto;
+}
+
+/* Imagen de header (inicio) */
+.bg-header {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  background-color: var(--Dark-Grayish-Cyan);
+}
+
+.bg-header img {
+  height: 100%;
+  width: 100%;
+}
+/* Imagen de header (fin) */
+/* -------------------------- */
+
+/* Seccion Container jobs (inicio) */
+.container-jobs {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  row-gap: 40px;
+}
+
+.article-job {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.border-left-style {
+  border-left: 3px solid var(--Desaturated-Dark-Cyan);
+}
+
+/* Seccion de la informacion (inicio) */
+.info-part {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.img-job img {
+  position: absolute;
+  width: 50px;
+  height: auto;
+  top: -25px;
+}
+
+.info-job {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--Dark-Grayish-Cyan);
+}
+
+.name-job {
+  display: flex;
+  align-items: center;
+  color: var(--Desaturated-Dark-Cyan);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.name-job p {
+  margin-right: 15px;
+}
+
+.new-span, .featured-span {
+  text-transform: uppercase;
+  padding: 3px 7px;
+  background-color: var(--Desaturated-Dark-Cyan);
+  color: white;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+
+.featured-span {
+  background-color: black;
+}
+
+.position-job {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.habilities {
+  display: flex;
+  font-size: 1.5rem;
+  color: var(--Dark-Grayish-Cyan);
+}
+
+.habilities span {
+  margin-right: 10px;
+}
+
+.habilities span:nth-child(n+2)::before {
+  content: '·';
+  margin-right: 10px;
+}
+
+.requirements {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin: 20px 0 20px;
+}
+
+.requirements span {
+  padding: 5px 10px;
+  font-size: 1.5rem;
+  color: var(--Desaturated-Dark-Cyan);
+  background-color: rgba(142, 179, 185, 0.1);
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Seccion de la informacion (fin) */
+/* Seccion Container jobs (fin) */
+/* ------------------------------ */
+.newContainer {
+  background-color: white;
+  border-radius: 4px;
+  padding: 20px;
+}
+.requirements .span-keyword {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 5px;
+}
+
+.span-keyword::after{
+  content: url('./images/icon-remove.svg');
+  margin-left: 10px;
+  background-color: rgba(142, 179, 185, 1);
+  padding: 8px;
+}
+
+.attribution {
+  grid-column: 2 / 3;
+}
+
+/* Media queries */
+@media (width > 900px) {
+  .article-job {
+    padding-top: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info-part {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img-job img {
+    position: static;
+    margin-right: 20px;
+  }
+
+  .info-job {
+    margin-top: 0;
+    border-bottom: unset;
+  }
+  
+  .requirements {
+    width: auto;
+  }
+}
